@@ -1,0 +1,9 @@
+services:
+  neuropilot:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      NEUROPILOT_DB: sqlite:////data/neuropilot.db
+      LOG_LEVEL: INFO
+    volumes: ["./data:/data"]
+    restart: unless-stopped
